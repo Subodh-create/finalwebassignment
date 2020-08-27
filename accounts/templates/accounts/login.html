@@ -1,0 +1,241 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sanjeevani Hospital Pharmacy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="{% static 'home/img/core-img/favicon.ico'%}" />
+  <!--==============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/bootstrap/css/bootstrap.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'home/fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{% static 'home/fonts/iconic/css/material-design-iconic-font.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/animate/animate.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/css-hamburgers/hamburgers.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/animsition/css/animsition.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/select2/select2.min.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/vendor/daterangepicker/daterangepicker.css'%}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{%static 'home/css/util.css'%}" />
+  <link rel="stylesheet" type="text/css" href="{%static 'home/css/main.css'%}" />
+  <!--===============================================================================================-->
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="medica-load"></div>
+    <img src="{% static 'home/img/core-img/plus.png'%}" alt="logo" />
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area ">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 h-100">
+            <div class="h-100 d-md-flex justify-content-between align-items-center">
+              <div class="top-header-social-info">
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Pinterest"><i class="fa fa-pinterest"
+                    aria-hidden="true"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"
+                    aria-hidden="true"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Twitter"><i class="fa fa-twitter"
+                    aria-hidden="true"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Dribbble"><i class="fa fa-dribbble"
+                    aria-hidden="true"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Behance"><i class="fa fa-behance"
+                    aria-hidden="true"></i></a>
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Linkedin"><i class="fa fa-linkedin"
+                    aria-hidden="true"></i></a>
+              </div>
+              <div class="top-header-menu">
+                <nav class="top-menu">
+                  <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Book</a></li>
+                    <li><a href="#">Appointment</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Emergencies +977 9852031605</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Header Area -->
+    <div class="main-header-area" id="stickyHeader">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 h-100">
+            <div class="main-menu h-100">
+              <nav class="navbar h-100 navbar-expand-lg">
+                <!-- Logo Area  -->
+                <a class="navbar-brand" href="index.html"><img src="{% static 'home/img/core-img/logo00.jpg' %}"
+                    alt="Logo" /></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medicaMenu"
+                  aria-controls="medicaMenu" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-bars"></i> Menu
+                </button>
+
+                <div class="collapse navbar-collapse" id="medicaMenu">
+                  <!-- Menu Area -->
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/">Home</a>
+                        <a class="dropdown-item" href="{%url 'about-us'%}">About Us</a>
+                        <a class="dropdown-item" href="{%url 'services'%}">Services</a>
+                        <a class="dropdown-item" href="{% url 'contact'%}">Contact</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{%url 'about-us'%}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'contact'%}">Contact</a>
+                    </li>
+                    {%if user.is_authenticated%}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout'%}">Log Out</a>
+                    </li>
+                    {%else%}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login'%}">Login</a>
+                    </li>
+                    {%endif%}
+                  </ul>
+
+                  <!-- Search Form -->
+                  <div class="header-search-form ml-auto">
+                    <form action="#">
+                      <input type="search" class="form-control" placeholder="Input your keyword then press enter..."
+                        id="search" name="search" />
+                      <input class="d-none" type="submit" value="submit" />
+                    </form>
+                  </div>
+                  <!-- Search btn -->
+                  <div id="searchbtn">
+                    <i class="ti-search" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url({%static 'home/img/bg-01.jpg'%});">
+      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <form class="login100-form validate-form" action="#" method="POST">
+          <span class="login100-form-title p-b-49">
+            Login
+          </span>
+          {%csrf_token%}
+          <div class="text-muted ml-3 my-2 text-danger">
+            {{error}}
+          </div>
+          <div class="wrap-input100 validate-input m-b-23" data-validate="Username is required">
+            <span class="label-input100">Username</span>
+            <input class="input100" type="text" name="username" placeholder="Type your username" />
+            <span class="focus-input100" data-symbol="&#xf206;"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <span class="label-input100">Password</span>
+            <input class="input100" type="password" name="password" placeholder="Type your password" />
+            <span class="focus-input100" data-symbol="&#xf190;"></span>
+          </div>
+          <input type="hidden" value="{{request.GET.next}}" name="next">
+          <div class="text-right p-t-8 p-b-31">
+            <a href="#">
+              Forgot password?
+            </a>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <div class="wrap-login100-form-btn">
+              <div class="login100-form-bgbtn"></div>
+              <button class="login100-form-btn">
+                Login
+              </button>
+            </div>
+          </div>
+
+          <div class="txt1 text-center p-t-54 p-b-20">
+            <span>
+              Or Sign Up Using
+            </span>
+          </div>
+
+          <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+              <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg2">
+              <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg3">
+              <i class="fa fa-google"></i>
+            </a>
+          </div>
+
+          <div class="flex-col-c p-t-155">
+            <span class="txt1 p-b-17">
+              Or Sign Up Using
+            </span>
+
+            <a href="{%url 'signin'%}" class="txt2">
+              Sign Up
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="dropDownSelect1"></div>
+
+  <!--===============================================================================================-->
+  <script src="{%static 'home/vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/vendor/animsition/js/animsition.min.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/vendor/bootstrap/js/popper.js'%}"></script>
+  <script src="{% static 'home/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/vendor/select2/select2.min.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/vendor/daterangepicker/moment.min.js'%}"></script>
+  <script src="{% static 'home/vendor/daterangepicker/daterangepicker.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/vendor/countdowntime/countdowntime.js'%}"></script>
+  <!--===============================================================================================-->
+  <script src="{% static 'home/js/main.js'%}"></script>
+</body>
+
+</html>

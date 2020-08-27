@@ -1,0 +1,20 @@
+{%extends "dashboard/base.html"%} {%block content%}
+<div class="container my-5">
+  <form action="#" method="POST">
+    <div class="jumbotron">
+      <h3>
+        Confirm
+      </h3>
+      <div class="container">
+        Do you want to delete your appointment ?
+      </div>
+
+      <div class="container">
+        <input type="submit" value="Yes, Confirm" class="btn btn-danger" />
+        <a href="{%url 'dashboard'%}" class="btn btn-pirmary">Cancel</a>
+        {%csrf_token%}
+      </div>
+    </div>
+  </form>
+</div>
+{%endblock%}

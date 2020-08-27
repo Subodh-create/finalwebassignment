@@ -1,0 +1,269 @@
+{%extends 'home/base.html'%} {%load static %} {%block content%}
+
+<section
+  class="breadcumb-area bg-img gradient-background-overlay"
+  style="background-image: url({%static 'img/bg-img/hero3.jpg'%});"
+>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <!-- Title -->
+          <h3 class="breadcumb-title">Services</h3>
+          <!-- Breadcumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Services
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="medica-services-area section_padding_100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="medica-services-sidebar-area">
+          <!-- Medica Emergency Card -->
+          <div class="medica-emergency-card">
+            <h5>For Emergencies</h5>
+            <h4>+9779852031605</h4>
+            <p>
+              We have a 24 hours Emergency managed by Doctors and staffs to
+              provide advice and assistance to those in need and 24 hrs
+              ambulance services
+            </p>
+            <a href="#">Read More</a>
+          </div>
+          <!-- Medica Doctors Card -->
+          <div class="medica-department-card">
+            <h5>Our Departments</h5>
+            <ul class="department-menu">
+              <li><a href="#">Radiology</a></li>
+              <li><a href="#">Cardiology</a></li>
+              <li><a href="#">Gastroenterology</a></li>
+              <li><a href="#">Neurology</a></li>
+              <li><a href="#">General surgery</a></li>
+              <li><a href="#">Haematology</a></li>
+              <li><a href="#">Nutrition</a></li>
+              <li><a href="#">Obstetrics</a></li>
+              <li><a href="#">Ophthalmology</a></li>
+            </ul>
+          </div>
+          <!-- Medica Appointment Card -->
+          <div class="medica-appointment-card">
+            <h5>Book an apppointment</h5>
+            <form action="#" method="post">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control text-white"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="number"
+                  id="number"
+                  placeholder="Phone"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="E-mail"
+                />
+              </div>
+              <button type="submit" class="btn medica-btn mt-15">
+                Make an Appointment
+              </button>
+            </form>
+          </div>
+          <!-- Medica Appointment Card -->
+          <div class="medica-contact-card">
+            <h5>Useful Information</h5>
+            <div class="mt-50"></div>
+            <div class="single-contact-info d-flex align-items-center">
+              <div class="contact-icon mr-30">
+                <img src="{%static 'img/icons/alarm-clock.png'%}" alt="" />
+              </div>
+              <div class="contact-meta">
+                <p>Sunday - Friday 8 am - 8pm <br />Saturday 8am - 1pm</p>
+              </div>
+            </div>
+            <div class="single-contact-info d-flex align-items-center">
+              <div class="contact-icon mr-30">
+                <img src="{%static 'img/icons/envelope.png'%}" alt="" />
+              </div>
+              <div class="contact-meta">
+                <p>
+                  +977 9852031605 <br />
+                  Bijaysh05@gmail.com
+                </p>
+              </div>
+            </div>
+            <div class="single-contact-info d-flex align-items-center">
+              <div class="contact-icon mr-30">
+                <img src="{%static 'img/icons/map-pin.png'%}" alt="" />
+              </div>
+              <div class="contact-meta">
+                <p>
+                  Biratnagar-9, Morang <br />
+                  Rangeli Road, Hospital Chowk
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-8">
+        <div class="all-services">
+          <div class="row">
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/service1.jpg'%}" alt="" />
+                <h5>Dental Care</h5>
+                <p>
+                  Started in the year 2000, with a vision to provide “The Best
+                  in Dental Care”, Healthy Smiles is privileged to be serving
+                  patients under our care from home and abroad, with the same
+                  zeal and commitment. Our patient’s trust and goodwill is what
+                  we have earned in this one decade of our service.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/service2.jpg'%}" alt="" />
+                <h5>Gastroenterology</h5>
+                <p>
+                  A department that takes care of diseases of digestive system
+                  that includes the stomach, intestines and liver. With a
+                  dedicated department for endoscopy and colonoscopy, the
+                  procedures can be done without delay and patients can feel
+                  relaxed with the privacy and comfort.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/service3.jpg'%}" alt="" />
+                <h5>General Surgery</h5>
+                <p>
+                  Department of General Surgery is the surgical specialty. At
+                  our Hospital, highly experienced and professional General
+                  Surgeons are available full time.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/service4.jpg'%}" alt="" />
+                <h5>Pharmacology</h5>
+                <p>
+                  The Pharmacy department offers a wide range of Nepal
+                  Government approved medicines to our patients including home
+                  medicine delivery services around Biratnagar. After proving
+                  your prescription, you can place your order online, by email,
+                  phone call, Viber.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/service5.jpg'%}" alt="" />
+                <h5>Radiology</h5>
+                <p>
+                  The Department of Radiology provides state-of-the-art
+                  radiologic imaging and therapeutic procedures for patients,
+                  offering out students to conduct cutting-edge research to push
+                  the barriers of imaging and advance medicine.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img src="{%static 'home/img/bg-img/cardiology.jpg'%}" alt="" />
+                <h5>Cardiology</h5>
+                <p>
+                  Our cardiology department is comprised of the best
+                  interventional cardiologists, cardiologists, cardiothoracic
+                  surgeons, cardiac anesthetists, cardiac perfusionists and
+                  nurses. Department of Cardiology, SHP is a well equipped super
+                  specialty department having energetic, dedicated and caring
+                  staffs.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img
+                  src="{%static 'home/img/bg-img/orthopadics.jpg'%}"
+                  alt=""
+                />
+                <h5>Orthopaedics</h5>
+                <p>
+                  The team of orthopedic surgeons in our department can take
+                  care of any difficulties arising in your bones ; joints and
+                  help solve your problem so that you can get back to your
+                  normal life & live it to the fullest.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+            <!-- Single Service -->
+            <div class="col-12 col-lg-6">
+              <div class="single-service">
+                <img
+                  src="{%static 'home/img/bg-img/opthalmology.jpg'%}"
+                  alt=""
+                />
+                <h5>Ophthalmology</h5>
+                <p>
+                  The department provides eye care services as well as follows
+                  an academic curriculum. It is equipped with ultramodern
+                  instruments such as Slit Lamp, Applenation/Schiotz Tonometer,
+                  Direct Ophthalmoscope, Sheak Retinoscope, A-scan, Keratometry
+                  & Operating microscope.
+                </p>
+                <a href="#">Read More</a>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <a href="#" class="btn medica-btn btn-2">Load More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

@@ -1,0 +1,116 @@
+{%extends "dashboard/base.html"%} {%block content%}
+<main role="main">
+  <div class="jumbotron px-5">
+    <h3 class="mx-5">Hello {{request.user}} !</h3>
+    <p class="mx-5">
+      {%ifequal request.user.profile.utype "NU"%} View all of your appointments
+      here. {%else%} All of the pending appointments {%endifequal%}
+    </p>
+    <div class="mx-5">
+      <small class="text-muted">
+        Appointments : {%firstof user.count "0"%} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Appointments Pending : {{pc}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Appointments
+        Accepted : {{pa}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Appointments Rejected :
+        {{pr}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </small>
+    </div>
+  </div>
+</main>
+<div class="container-fluid">
+  <div>
+    <table class="table table-striped">
+      <thead class="bg-dark text-white">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Message</th>
+          <th scope="colgroup">Status</th>
+          <th scope="col">Appointed to</th>
+          <th scope="col">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for app in user%}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{app.date}}</td>
+          <td>{{app.phone}}</td>
+          <td>{{app.email}}</td>
+          <td>
+            {{app.desp}}
+            <br />
+            {%if app.photo%}
+            <br />
+            <a href="{{app.photo.url}}" target="_blank">
+              <img src="{{app.photo.url}}" style="height: 150px;" />
+            </a>
+            {%endif%}
+          </td>
+          <td>
+            {%if request.user.profile.utype == "NU"%}
+            <a href="{%url 'editapp' id=app.id%}" class="btn btn-secondary">
+              Edit
+            </a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{%url 'deleteapp' id=app.id%}" class="btn btn-danger">
+              Delete
+            </a>
+            {%else%}
+            <form action="#" method="POST" action="{%url 'submit'%}">
+              <input type="hidden" value="{{app.id}}" name="appid" />
+              <label>Enter a message to the user</label>
+              <textarea name="answer"> </textarea><br />
+              <select name="status">
+                {%ifequal app.status "pending"%}
+                <option value="pending" selected>Pending</option>
+                {%else%}
+                <option value="pending">Pending</option>
+                {%endifequal%} {%ifequal app.status "accepted"%}
+                <option value="accepted" selected>Accepted</option>
+                {%else%}
+                <option value="accepted">Accepted</option>
+                {%endifequal%} {%ifequal app.status "rejected"%}
+                <option value="rejected" selected>Rejected</option>
+                {%else%}
+                <option value="rejected">Rejected</option>
+                {%endifequal%}
+              </select>
+              <input type="hidden" name="" value="{{app.id}}" />
+              {%csrf_token%}
+              <input type="submit" />
+            </form>
+            {%endif%}
+          </td>
+          <td>
+            {%ifequal request.user.profile.utype "NU"%} {%if app.appto%}
+            {{app.appto}} {%else%} no one {%endif%} {%else%} x {%endifequal%}
+          </td>
+          {%if app.answer%}
+          <td>
+            {{app.answer}}
+          </td>
+          {%else%}
+          <td>
+            No messages from doc
+          </td>
+          {%endif%}
+        </tr>
+        {%empty%}
+        <tr>
+          <th scope="row" class="px-3">
+            You have no appointments.
+          </th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endblock%}

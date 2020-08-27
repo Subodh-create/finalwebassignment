@@ -1,0 +1,12 @@
+cd Desktop
+cd Sajnee
+cd venv
+cd Scripts
+activate
+cd ..
+cd ..
+to run server
+python manage.py runserver
+
+admin
+python manage.py createsuperuser
